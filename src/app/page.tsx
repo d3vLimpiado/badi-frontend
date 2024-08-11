@@ -1,11 +1,8 @@
-import { Button, Typography } from "@/components";
-
-const { H1 } = Typography;
+import { Button } from "@/components";
 
 export default function Home() {
   return (
     <main>
-      <H1>BADI!</H1>
       <Button>CLICK ME!</Button>
     </main>
   );

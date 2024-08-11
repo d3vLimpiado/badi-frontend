@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { CardComponent, Navigation } from "@/components";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+const { Card, CardContent, CardHeader, CardTitle } = CardComponent;
+const { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } = Navigation;
 
 export const metadata: Metadata = {
   title: "BADI",
@@ -19,10 +24,44 @@ export default function RootLayout({
     <html lang="en">
       <body 
         className={cn(
-          "min-h-screen bg-background dark font-sans antialiased",
+          "bg-background dark font-sans antialiased",
           inter.variable
         )}>
-          {children}
+          <div className="flex h-svh p-2">
+            <Card className="rounded-r-none">
+              <CardHeader>
+                <CardTitle>
+                  BADI
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-2 min-w-60">
+                <NavigationMenu className="min-w-full">
+                  <NavigationMenuList className={cn("flex-col")}>
+                    <NavigationMenuItem>
+                      <Link href="/" legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "min-w-60 justify-start")}>HOME</NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <Link href="/" legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "min-w-60 justify-start")}>PROFILE</NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <Link href="/" legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "min-w-60 justify-start")}>FORUM</NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </CardContent>
+            </Card>
+            <Card className="grow rounded-l-none border-l-0">
+              <CardContent>
+                {children}
+              </CardContent>
+            </Card>
+          </div>
       </body>
     </html>
   );
