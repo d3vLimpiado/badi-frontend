@@ -8,7 +8,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const { Card, CardContent, CardHeader, CardTitle } = CardComponent;
-const { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } = Navigation;
+const { NavMenu, NavMenuList, NavMenuItem, NavMenuLink, navigationMenuTriggerStyle } = Navigation;
 
 export const metadata: Metadata = {
   title: "BADI",
@@ -34,29 +34,30 @@ export default function RootLayout({
                   BADI
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-2 min-w-60">
-                <NavigationMenu className="min-w-full">
-                  <NavigationMenuList className={cn("flex-col")}>
-                    <NavigationMenuItem>
+              <CardContent className="p-2 min-w-52">
+                <NavMenu orientation="vertical">
+                  <NavMenuList>
+                    <NavMenuItem>
                       <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "min-w-60 justify-start")}>HOME</NavigationMenuLink>
+                        <NavMenuLink className={cn(navigationMenuTriggerStyle())}>Home</NavMenuLink>
                       </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
+                    </NavMenuItem>
+                    <NavMenuItem>
                       <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "min-w-60 justify-start")}>PROFILE</NavigationMenuLink>
+                        <NavMenuLink className={cn(navigationMenuTriggerStyle())}>Profile</NavMenuLink>
                       </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
+                    </NavMenuItem>
+                    <NavMenuItem>
                       <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "min-w-60 justify-start")}>FORUM</NavigationMenuLink>
+                        <NavMenuLink className={cn(navigationMenuTriggerStyle())}>Forum</NavMenuLink>
                       </Link>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
+                    </NavMenuItem>
+                  </NavMenuList>
+                </NavMenu>
               </CardContent>
             </Card>
             <Card className="grow rounded-l-none border-l-0">
+              <CardHeader />
               <CardContent>
                 {children}
               </CardContent>

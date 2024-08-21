@@ -1,0 +1,16 @@
+.navMenu[data-orientation="vertical"] > div {
+  @apply w-full;
+}
+
+.navMenuList[data-orientation="vertical"] {
+  @apply flex-col items-start space-x-0;
+}
+
+.navMenuList[data-orientation="vertical"] > li,
+.navMenuList[data-orientation="vertical"] > li > a {
+  @apply w-full;
+}
+
+.navMenuList[data-orientation="vertical"] > li > a {
+  @apply justify-start;
+}
