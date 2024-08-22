@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { CardComponent, Navigation } from "@/components";
-import Link from "next/link";
+import { CardComponent } from "@/components";
+import { NavLinks } from "./ui";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const { Card, CardContent, CardHeader, CardTitle } = CardComponent;
-const { NavMenu, NavMenuList, NavMenuItem, NavMenuLink, navigationMenuTriggerStyle } = Navigation;
 
 export const metadata: Metadata = {
   title: "BADI",
@@ -35,25 +34,7 @@ export default function RootLayout({
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-2 min-w-52">
-                <NavMenu orientation="vertical">
-                  <NavMenuList>
-                    <NavMenuItem>
-                      <Link href="/" legacyBehavior passHref>
-                        <NavMenuLink className={cn(navigationMenuTriggerStyle())}>Home</NavMenuLink>
-                      </Link>
-                    </NavMenuItem>
-                    <NavMenuItem>
-                      <Link href="/" legacyBehavior passHref>
-                        <NavMenuLink className={cn(navigationMenuTriggerStyle())}>Profile</NavMenuLink>
-                      </Link>
-                    </NavMenuItem>
-                    <NavMenuItem>
-                      <Link href="/" legacyBehavior passHref>
-                        <NavMenuLink className={cn(navigationMenuTriggerStyle())}>Forum</NavMenuLink>
-                      </Link>
-                    </NavMenuItem>
-                  </NavMenuList>
-                </NavMenu>
+                <NavLinks />
               </CardContent>
             </Card>
             <Card className="grow rounded-l-none border-l-0">

@@ -3,7 +3,7 @@
 }
 
 .navMenuList[data-orientation="vertical"] {
-  @apply flex-col items-start space-x-0;
+  @apply flex-col items-start space-x-0 gap-2;
 }
 
 .navMenuList[data-orientation="vertical"] > li,
