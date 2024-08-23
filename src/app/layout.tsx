@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { CardComponent, Typography } from "@/components";
+import { CardComponent, Typography, AvatarComponent } from "@/components";
 import { NavLinks } from "./ui";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const { Card, CardContent, CardHeader, CardTitle } = CardComponent;
+const { Card, CardContent } = CardComponent;
 const { H2 } = Typography;
+const { Avatar, AvatarFallback } = AvatarComponent;
 
 export const metadata: Metadata = {
   title: "BADI",
@@ -28,10 +29,13 @@ export default function RootLayout({
           inter.variable
         )}>
           <div className="container grid grid-rows-[56px_minmax(0,_1fr)] h-svh p-2 gap-5">
-            <Card className="px-2">
+            <Card className="px-4">
               <CardContent className="p-2 min-w-52 flex">
                 <H2>BADI</H2>
                 <NavLinks />
+                <Avatar className="cursor-pointer">
+                  <AvatarFallback>U</AvatarFallback>
+                </Avatar>
               </CardContent>
             </Card>
             <div>

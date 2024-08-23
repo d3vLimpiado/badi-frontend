@@ -41,7 +41,7 @@ export default function NavLinks() {
       <NavMenuList>
         {
           navData.map(nav => (
-            <NavMenuItem>
+            <NavMenuItem key={nav.label}>
               <Link href={nav.url} legacyBehavior passHref>
                 <NavMenuLink data-active={pathname === nav.url} className={cn(navigationMenuTriggerStyle())}>
                   {nav.label}
