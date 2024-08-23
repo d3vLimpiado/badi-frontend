@@ -37,7 +37,7 @@ export default function NavLinks() {
     },
   ]
   return (
-    <NavMenu orientation="vertical">
+    <NavMenu className='m-auto'>
       <NavMenuList>
         {
           navData.map(nav => (
