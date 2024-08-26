@@ -20,10 +20,6 @@ export default function NavLinks() {
       url: "/forum"
     },
     {
-      label: "Gallery",
-      url: "/gallery"
-    },
-    {
       label: "Jobs",
       url: "/jobs"
     },
